@@ -2,7 +2,7 @@ jobs:
 ###
   - job: scripts
     pool:
-      vmImage: 'windows-latest'
+      vmImage: 'ubuntu-latest'
     steps:
       - script: echo "This step runs in the default shell"
       - bash: echo "This step runs in bash"
