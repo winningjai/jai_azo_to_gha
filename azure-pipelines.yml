@@ -12,11 +12,11 @@ jobs:
           targetType: inline
           script: Write-Host "This step runs in PowerShell"
 ##
-#   - job: run_command
-#     pool:
-#       vmImage: 'windows-latest'
-#     steps:
-#       - script: echo "This step runs in CMD on Windows by default"
+  - job: run_command
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+      - script: echo "This step runs in CMD on Windows by default"
 # ##
 #   - job: conditional
 #     pool:
