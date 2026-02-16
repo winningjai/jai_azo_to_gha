@@ -18,44 +18,44 @@ jobs:
     steps:
       - script: echo "This step runs in CMD on Windows by default"
 # ##
-#   - job: conditional
-#     pool:
-#       vmImage: 'ubuntu-latest'
-#     steps:
-#       - script: echo "This step runs with str equals 'ABC' and num equals 123"
-#         condition: and(eq(variables.str, 'ABC'), eq(variables.num, 123))
-# ##
-#   - job: initial
-#     pool:
-#       vmImage: 'ubuntu-latest'
-#     steps:
-#       - script: echo "This job will be run first."
-#   - job: fanout1
-#     pool:
-#       vmImage: 'ubuntu-latest'
-#     dependsOn: initial
-#     steps:
-#       - script: echo "This job will run after the initial job, in parallel with fanout2."
-#   - job: fanout2
-#     pool:
-#       vmImage: 'ubuntu-latest'
-#     dependsOn: initial
-#     steps:
-#       - script: echo "This job will run after the initial job, in parallel with fanout1."
-#   - job: fanin
-#     pool:
-#       vmImage: 'ubuntu-latest'
-#     dependsOn: [fanout1, fanout2]
-#     steps:
-#       - script: echo "This job will run after fanout1 and fanout2 have finished."
-# ##
-#   - job: run_python
-#     pool:
-#       vmImage: 'ubuntu-latest'
-#     steps:
-#       - task: UsePythonVersion@0
-#         inputs:
-#           versionSpec: '3.7'
-#           architecture: 'x64'
-#       - script: python script.py
+  - job: conditional
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - script: echo "This step runs with str equals 'ABC' and num equals 123"
+        condition: and(eq(variables.str, 'ABC'), eq(variables.num, 123))
+##
+  - job: initial
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - script: echo "This job will be run first."
+  - job: fanout1
+    pool:
+      vmImage: 'ubuntu-latest'
+    dependsOn: initial
+    steps:
+      - script: echo "This job will run after the initial job, in parallel with fanout2."
+  - job: fanout2
+    pool:
+      vmImage: 'ubuntu-latest'
+    dependsOn: initial
+    steps:
+      - script: echo "This job will run after the initial job, in parallel with fanout1."
+  - job: fanin
+    pool:
+      vmImage: 'ubuntu-latest'
+    dependsOn: [fanout1, fanout2]
+    steps:
+      - script: echo "This job will run after fanout1 and fanout2 have finished."
+##
+  - job: run_python
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '3.7'
+          architecture: 'x64'
+      - script: python script.py
 
