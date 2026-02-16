@@ -60,7 +60,7 @@ jobs:
       - script: python script.py
   - job: environmental_variables
     pool:
-      vmImage: 'ubuntu'
+      vmImage: 'ubuntu-latest'
       steps:
         - script: echo "printing env variable name = $(NAME)"
         - script: echo "printing secrets variable secret_name = $(SECRET_NAME)"
