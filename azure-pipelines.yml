@@ -65,4 +65,4 @@ jobs:
       - script: echo "printing env variable name = $(NAME)"
       - script: echo "printing secrets variable secret_name = $(SECRET_NAME)"
       - script: echoo "matched"
-        condition: eq(variables.medica_secret,'medica_secret')
+        condition: eq(variables.secret_name,'medica_secret')
