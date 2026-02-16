@@ -49,13 +49,13 @@ jobs:
     steps:
       - script: echo "This job will run after fanout1 and fanout2 have finished."
 ##
-  - job: run_python
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
-      - task: UsePythonVersion@0
-        inputs:
-          versionSpec: '3.7'
-          architecture: 'x64'
-      - script: python script.py
+  # - job: run_python
+  #   pool:
+  #     vmImage: 'ubuntu-latest'
+  #   steps:
+  #     - task: UsePythonVersion@0
+  #       inputs:
+  #         versionSpec: '3.7'
+  #         architecture: 'x64'
+  #     - script: python script.py
 
